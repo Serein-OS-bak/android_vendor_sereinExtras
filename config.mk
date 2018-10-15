@@ -45,6 +45,7 @@ PRODUCT_PACKAGES += \
     DialerTheme \
     TelecommTheme
  PRODUCT_PACKAGES += \
+    NotificationsBlack \
     NotificationsDark \
     NotificationsLight \
     NotificationsPrimary
