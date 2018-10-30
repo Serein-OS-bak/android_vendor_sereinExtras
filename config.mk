@@ -12,6 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Prebuilt Packages
+PRODUCT_PACKAGES += \
+    WallpaperPickerGooglePrebuilt \
+    NexusLauncherPrebuilt
+
 # Fonts
 PRODUCT_COPY_FILES += \
     vendor/sereinextras/fonts/GoogleSans-Regular.ttf:system/fonts/GoogleSans-Regular.ttf \
