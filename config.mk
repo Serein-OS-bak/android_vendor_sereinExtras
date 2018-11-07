@@ -39,8 +39,43 @@ PRODUCT_COPY_FILES += \
 
 ADDITIONAL_FONTS_FILE := vendor/sereinextras/fonts/google-sans.xml
 
-
 # Include package overlays
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/sereinextras/overlay
 DEVICE_PACKAGE_OVERLAYS += \
     vendor/sereinextras/overlay/common/
+
+# Omni Poor Man Themes
+PRODUCT_PACKAGES += \
+    DocumentsUITheme \
+    DialerTheme \
+    TelecommTheme
+
+ PRODUCT_PACKAGES += \
+    NotificationsBlack \
+    NotificationsDark \
+    NotificationsLight \
+    NotificationsPrimary
+
+ PRODUCT_PACKAGES += \
+    AccentSluttyPink \
+    AccentPixel \
+    AccentGoldenShower \
+    AccentDeepOrange \
+    AccentOmni \
+    AccentWhite \
+    AccentTeal \
+    AccentFromHell \
+    AccentBlueMonday \
+    AccentSmokingGreen \
+    AccentDeadRed \
+    AccentRottenOrange \
+    AccentDeepPurple
+
+ PRODUCT_PACKAGES += \
+    PrimaryAlmostBlack \
+    PrimaryBlack \
+    PrimaryOmni \
+    PrimaryWhite \
+    PrimaryColdWhite \
+    PrimaryWarmWhite \
+    PrimaryDarkBlue
