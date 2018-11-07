@@ -38,3 +38,9 @@ PRODUCT_COPY_FILES += \
     vendor/sereinextras/fonts/GoogleSans-BoldItalic.ttf:system/fonts/GoogleSans-BoldItalic.ttf
 
 ADDITIONAL_FONTS_FILE := vendor/sereinextras/fonts/google-sans.xml
+
+
+# Include package overlays
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/sereinextras/overlay
+DEVICE_PACKAGE_OVERLAYS += \
+    vendor/sereinextras/overlay/common/
