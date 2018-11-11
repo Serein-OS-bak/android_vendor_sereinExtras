@@ -14,7 +14,8 @@
 
 # Prebuilt Packages
 PRODUCT_PACKAGES += \
-    WallpaperPickerGooglePrebuilt
+    WallpaperPickerGooglePrebuilt \
+    NexusLauncherPrebuilt
 
 # Bootanimation
 ifeq ($(TARGET_BOOT_ANIMATION_RES),720)
