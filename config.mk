@@ -79,3 +79,7 @@ PRODUCT_PACKAGES += \
     PrimaryColdWhite \
     PrimaryWarmWhite \
     PrimaryDarkBlue
+
+# Ambient play history
+ PRODUCT_PACKAGES += \
+    AmbientPlayHistoryProvider
