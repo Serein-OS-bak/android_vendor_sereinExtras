@@ -16,16 +16,21 @@
 PRODUCT_PACKAGES += \
     WallpaperPickerGooglePrebuilt
 
-# Bootanimation
-ifeq ($(TARGET_BOOT_ANIMATION_RES),720)
-     PRODUCT_COPY_FILES += vendor/sereinextras/media/bootanimation_720.zip:system/media/bootanimation.zip
-else ifeq ($(TARGET_BOOT_ANIMATION_RES),1080)
-     PRODUCT_COPY_FILES += vendor/sereinextras/media/bootanimation_1080.zip:system/media/bootanimation.zip
-else ifeq ($(TARGET_BOOT_ANIMATION_RES),1440)
-     PRODUCT_COPY_FILES += vendor/sereinextras/media/bootanimation_1440.zip:system/media/bootanimation.zip
+# Boot Animation
+serein_device := $(patsubst %f,%,$(subst serein_,,$(TARGET_PRODUCT)))
+
+ifneq ($(filter mido vince,$(serein_device)),)
+     scr_resolution := 1080x1920
+else ifneq ($(filter enchilada beryllium, $(serein_device)),)
+     scr_resolution := 1080x2280
 else
-     $(warning "sereinExtras: TARGET_BOOT_ANIMATION_RES is undefined, assuming 1080p")
-     PRODUCT_COPY_FILES += vendor/sereinextras/media/bootanimation_1080.zip:system/media/bootanimation.zip
+    $(warning "sereinExtras: bootanimation resolution is undefined, assuming 1080p")
+    scr_resolution := 1080x1920
+endif
+
+ifneq ($(wildcard vendor/sereinextras/media/$(scr_resolution).zip),)
+PRODUCT_COPY_FILES += \
+    vendor/sereinextras/media/$(scr_resolution).zip:system/media/bootanimation.zip
 endif
 
 # Fonts
