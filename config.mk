@@ -17,37 +17,37 @@ PRODUCT_PACKAGES += \
     WallpaperPickerGooglePrebuilt
 
 # Boot Animation
-serein_device := $(patsubst %f,%,$(subst serein_,,$(TARGET_PRODUCT)))
+ether_device := $(patsubst %f,%,$(subst ether_,,$(TARGET_PRODUCT)))
 
-ifneq ($(filter mido vince,$(serein_device)),)
+ifneq ($(filter mido vince,$(ether_device)),)
      scr_resolution := 1080x1920
-else ifneq ($(filter enchilada beryllium, $(serein_device)),)
+else ifneq ($(filter enchilada beryllium, $(ether_device)),)
      scr_resolution := 1080x2280
 else
-    $(warning "sereinExtras: bootanimation resolution is undefined, assuming 1080p")
+    $(warning "etherExtras: bootanimation resolution is undefined, assuming 1080p")
     scr_resolution := 1080x1920
 endif
 
-ifneq ($(wildcard vendor/sereinextras/media/$(scr_resolution).zip),)
+ifneq ($(wildcard vendor/etherextras/media/$(scr_resolution).zip),)
 PRODUCT_COPY_FILES += \
-    vendor/sereinextras/media/$(scr_resolution).zip:system/media/bootanimation.zip
+    vendor/etherextras/media/$(scr_resolution).zip:system/media/bootanimation.zip
 endif
 
 # Fonts
 PRODUCT_COPY_FILES += \
-    vendor/sereinextras/fonts/GoogleSans-Regular.ttf:system/fonts/GoogleSans-Regular.ttf \
-    vendor/sereinextras/fonts/GoogleSans-Medium.ttf:system/fonts/GoogleSans-Medium.ttf \
-    vendor/sereinextras/fonts/GoogleSans-MediumItalic.ttf:system/fonts/GoogleSans-MediumItalic.ttf \
-    vendor/sereinextras/fonts/GoogleSans-Italic.ttf:system/fonts/GoogleSans-Italic.ttf \
-    vendor/sereinextras/fonts/GoogleSans-Bold.ttf:system/fonts/GoogleSans-Bold.ttf \
-    vendor/sereinextras/fonts/GoogleSans-BoldItalic.ttf:system/fonts/GoogleSans-BoldItalic.ttf
+    vendor/etherextras/fonts/GoogleSans-Regular.ttf:system/fonts/GoogleSans-Regular.ttf \
+    vendor/etherextras/fonts/GoogleSans-Medium.ttf:system/fonts/GoogleSans-Medium.ttf \
+    vendor/etherextras/fonts/GoogleSans-MediumItalic.ttf:system/fonts/GoogleSans-MediumItalic.ttf \
+    vendor/etherextras/fonts/GoogleSans-Italic.ttf:system/fonts/GoogleSans-Italic.ttf \
+    vendor/etherextras/fonts/GoogleSans-Bold.ttf:system/fonts/GoogleSans-Bold.ttf \
+    vendor/etherextras/fonts/GoogleSans-BoldItalic.ttf:system/fonts/GoogleSans-BoldItalic.ttf
 
-ADDITIONAL_FONTS_FILE := vendor/sereinextras/fonts/google-sans.xml
+ADDITIONAL_FONTS_FILE := vendor/etherextras/fonts/google-sans.xml
 
 # Include package overlays
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/sereinextras/overlay
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/etherextras/overlay
 DEVICE_PACKAGE_OVERLAYS += \
-    vendor/sereinextras/overlay/common/
+    vendor/etherextras/overlay/common/
 
 # Omni Poor Man Themes
 PRODUCT_PACKAGES += \
@@ -84,7 +84,3 @@ PRODUCT_PACKAGES += \
     PrimaryColdWhite \
     PrimaryWarmWhite \
     PrimaryDarkBlue
-
-# Ambient play history
- PRODUCT_PACKAGES += \
-    AmbientPlayHistoryProvider
